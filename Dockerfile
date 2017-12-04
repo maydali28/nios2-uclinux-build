@@ -44,6 +44,10 @@ RUN wget http://www.uclinux.org/pub/uClinux/dist/uClinux-dist-20140504.tar.bz2 \
 	&& tar xvf uClinux-dist-20140504.tar.bz2 \
 	&& rm uClinux-dist-20140504.tar.bz2
 
+COPY nios2_dfconfig /uClinux-dist/.config
+RUN make
+
+
 RUN mkdir /scripts
 WORKDIR /scripts
 ENV SCRIPTS /scripts
